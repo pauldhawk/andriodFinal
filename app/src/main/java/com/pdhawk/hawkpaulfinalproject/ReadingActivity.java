@@ -6,11 +6,20 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.Toast;
 
 public class ReadingActivity extends Activity {
+    private float x1,x2;
+    static final int MIN_DISTANCE = 150;
+    static final int NEG_MIN_DISTANCE = 150;
+    Data d = new Data();
+    int x;
+    final  Book book = d.books.get(x);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +29,8 @@ public class ReadingActivity extends Activity {
         final Button btnForward = (Button)findViewById(R.id.btn_forward);
         final ImageView page = (ImageView)findViewById(R.id.icon);
         // todo add singleton so don't have to load twice
-        Data d = new Data();
         Intent intent = getIntent();
-        int x = intent.getIntExtra("id", 0);
-        final  Book book = d.books.get(x);
+        x = intent.getIntExtra("id", 0);
         page.setImageResource(book.pages.get(0).picture);
         MediaPlayer.create(getBaseContext(), book.pages.get(0).sound).start();
 
@@ -77,5 +84,37 @@ public class ReadingActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        switch(event.getAction())
+        {
+            case MotionEvent.ACTION_DOWN:
+                x1 = event.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = event.getX();
+                float deltaX = x2 - x1;
+                final ImageView page = (ImageView)findViewById(R.id.icon);
+                Page p = null;
+               if  (deltaX > MIN_DISTANCE && deltaX > 0) {
+                   Toast.makeText(this, "left2right swipe", Toast.LENGTH_SHORT).show();
+                   p = book.getPrevPage();
+                   page.setImageResource(p.picture);
+                   MediaPlayer.create(getBaseContext(), p.sound).start();
+
+
+               } else if (deltaX < NEG_MIN_DISTANCE && deltaX < 0) {
+                   Toast.makeText(this, "right to left swipe", Toast.LENGTH_SHORT).show();
+                   p = book.getNextPage();
+                   page.setImageResource(p.picture);
+                   MediaPlayer.create(getBaseContext(), p.sound).start();
+
+               }
+                else {}
+            }
+
+        return super.onTouchEvent(event);
     }
 }
