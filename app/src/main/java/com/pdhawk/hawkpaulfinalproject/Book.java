@@ -17,16 +17,13 @@ public class Book {
     int currentPage = 0;
     int totalPages;
 
-
-
-
     // if i get to it
     public ArrayList<User>  user;
     public String           author; // simpliyint to single author so just need name
     public String           style;
     public HashMap<Integer, Page> pages;
-    // todo remove
-    public String           picture;
+
+
 
 
 
