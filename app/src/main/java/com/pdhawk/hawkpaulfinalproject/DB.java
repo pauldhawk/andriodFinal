@@ -10,14 +10,14 @@ public class DB {
 
     public static abstract class Pages implements BaseColumns {
         public static final String TABLE_NAME = "pages";
-        public static final String C_ID = "page_id";
+        public static final String C_ID = "_id";
         public static final String C_PAGE_NUMBER = "page_number";
         public static final String C_PICTURE = "picture";
         public static final String C_SOUND = "sound";
         public static final String C_BOOK_ID = "book_id";
 
         public static final String SQL_CREATE_PAGE =
-                "page_id INTEGER PRIMARY KEY " +
+                "_id INTEGER PRIMARY KEY " +
                         ", page_number INTEGER " +
                         ", picture Integer not null " +
                         ", sound Integer not null " +
@@ -25,12 +25,13 @@ public class DB {
                         ", FOREIGN KEY( book_id) REFERENCES books(_id) " +
                         "); ";
 
-        public static final String SQL_DELETE_PAGES = " drop table if exists pages; " ;
+        public static final String SQL_DELETE_PAGES =
+                                    " drop table if exists pages; " ;
     }
 
     public static abstract class Books implements BaseColumns {
         public static final String TABLE_NAME = "books";
-        public static final String C_ID = "book_id";
+        public static final String C_ID = "_id";
         public static final String C_TITLE = "title";
         public static final String C_DESCRIPTION = "description";
         public static final String C_ICON = "icon";
@@ -40,7 +41,7 @@ public class DB {
 
         public static final String SQL_CREATE_BOOK =
                     "create table books ( " +
-                            "     book_id INTEGER PRIMARY KEY " +
+                            "     _id INTEGER PRIMARY KEY " +
                             "     , title varchar not null " +
                             "     , description varchar " +
                             "     , icon INTEGER " +
@@ -49,9 +50,8 @@ public class DB {
                             "     , author TEXT " +
                             "  ); ";
 
-        public static final String SQL_DELETE_BOOK =  " drop table if exists books; " ;
-
-
+        public static final String SQL_DELETE_BOOK =
+                                     " drop table if exists books; " ;
 
     }
 

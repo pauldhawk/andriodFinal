@@ -40,9 +40,9 @@ public class MainActivity extends Activity {
                 }
             }
         };
+
         btnBook.setOnClickListener(btnListener);
         btnRec.setOnClickListener(btnListener);
-
 
 
     }

@@ -1,6 +1,11 @@
 package com.pdhawk.hawkpaulfinalproject;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 import java.util.HashMap;
 
 public class Data {
@@ -24,6 +29,7 @@ public class Data {
         PageData();
         books.get(1).pages.putAll(pumpkinPages);
         books.get(0).pages.putAll(nightPages);
+
     }
 
 
@@ -88,6 +94,10 @@ public class Data {
         //     Page(int id, int picture, int sound ){
 
 
+
+    }
+
+    public void addPagesToDB () {
 
     }
 
