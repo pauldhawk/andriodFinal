@@ -3,6 +3,7 @@ package com.pdhawk.hawkpaulfinalproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +14,7 @@ import com.pdhawk.hawkpaulfinalproject.R;
 import com.pdhawk.hawkpaulfinalproject.RecordActivity;
 
 public class MainActivity extends Activity {
-
+    public static final String TAG = "meBug";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +38,20 @@ public class MainActivity extends Activity {
                     default:
                         break;
 
+
+
                 }
             }
         };
 
         btnBook.setOnClickListener(btnListener);
         btnRec.setOnClickListener(btnListener);
+        Log.d(TAG, DB.Pages.SQL_CREATE_PAGE);
+        Log.d(TAG, DB.Pages.SQL_DELETE_PAGES);
+        Log.d(TAG, DB.Books.SQL_CREATE_BOOK);
+        Log.d(TAG, DB.Books.SQL_DELETE_BOOK);
+
+        DBSingle helper = DBSingle.getInstance(this);
 
 
     }
@@ -68,4 +77,25 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+//    // Create sample data
+//    User sampleUser = new User();
+//    sampleUser.userName = "Steph";
+//    sampleUser.profilePictureUrl = "https://i.imgur.com/tGbaZCY.jpg";
+//
+//    Post samplePost = new Post();
+//    samplePost.user = sampleUser;
+//    samplePost.text = "Won won!";
+//
+//    // Get singleton instance of database
+ //   DBSingle databaseHelper = DBSingle.getInstance(this);
+//
+//    // Add sample post to the database
+//    databaseHelper.addPost(samplePost);
+//
+//    // Get all posts from database
+//    List<Post> posts = databaseHelper.getAllPosts();
+//    for (Post post : posts) {
+//        // do something
+//    }
+
 }

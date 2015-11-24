@@ -17,16 +17,17 @@ public class DB {
         public static final String C_BOOK_ID = "book_id";
 
         public static final String SQL_CREATE_PAGE =
-                "_id INTEGER PRIMARY KEY " +
+                "create table pages ( " +
+                        "_id INTEGER PRIMARY KEY " +
                         ", page_number INTEGER " +
                         ", picture Integer not null " +
                         ", sound Integer not null " +
                         ",  book_id Integer " +
                         ", FOREIGN KEY( book_id) REFERENCES books(_id) " +
-                        "); ";
+                        ") ";
 
         public static final String SQL_DELETE_PAGES =
-                                    " drop table if exists pages; " ;
+                                    " drop table if exists pages " ;
     }
 
     public static abstract class Books implements BaseColumns {
@@ -48,10 +49,10 @@ public class DB {
                             "     , cover INTEGER " +
                             "     , isbdn TEXT " +
                             "     , author TEXT " +
-                            "  ); ";
+                            "  ) ";
 
         public static final String SQL_DELETE_BOOK =
-                                     " drop table if exists books; " ;
+                                     " drop table if exists books " ;
 
     }
 

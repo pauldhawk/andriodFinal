@@ -35,7 +35,8 @@ public class ReadingActivity extends Activity {
         MediaPlayer.create(getBaseContext(), book.pages.get(0).sound).start();
 
 
-
+        DBSingle databaseHelper = DBSingle.getInstance(this);
+        databaseHelper.close();
         // final MediaPlayer mp = new MediaPlayer.create(this, R.raw.a);
 
 
