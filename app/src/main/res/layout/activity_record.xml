@@ -9,9 +9,11 @@
 
     <ImageView
         android:id="@+id/icon"
+        android:maxHeight="500dp"
+        android:minHeight="100dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/page01"
+        android:background="#a8ecff"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_alignParentTop="true"

@@ -34,11 +34,11 @@ public class RecordActivity extends Activity {
                 switch (v.getId()) {
                     case (R.id.btn_back):
                         MediaPlayer.create(getBaseContext(), R.raw.a).start();
-                        page.setImageResource(R.drawable.page01);
+                       // page.setImageResource();
                         break;
                     case (R.id.btn_forward):
                         MediaPlayer.create(getBaseContext(), R.raw.a).start();
-                        page.setImageResource(R.drawable.page02);
+                     //   page.setImageResource(R.drawable.page02);
                         break;
                     case (R.id.btn_record):
                         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
