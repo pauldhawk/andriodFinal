@@ -14,14 +14,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#a8ecff" />
+         />
 
     <Button
         android:id="@+id/btn_back"
-        android:text="Backward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/icon"
+        android:background="@drawable/back_nav"
+        android:layout_below="@+id/icon"
         />
     <Button
         android:id="@+id/btn_forward"
@@ -29,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
         android:layout_alignParentEnd="true"
-        android:text="Forward"
+        android:background="@drawable/forward_nav"
+
         />
 
 

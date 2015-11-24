@@ -21,14 +21,14 @@
 
     <Button
         android:id="@+id/btn_back"
-        android:text="Backward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
+        android:background="@drawable/back_nav"
         />
     <Button
         android:id="@+id/btn_record"
-        android:text="record"
+        android:background="@drawable/btn_rec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
@@ -36,28 +36,29 @@
         />
     <Button
         android:id="@+id/btn_play"
-        android:text="Play"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
         android:layout_toEndOf="@+id/btn_record"
+        android:background="@drawable/btn_play"
         />
     <Button
         android:id="@+id/btn_stop"
-        android:text="Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
         android:layout_toStartOf="@+id/btn_record"
+        android:background="@drawable/btn_stop"
         />
 
     <Button
         android:id="@+id/btn_forward"
-        android:text="forward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/icon"
         android:layout_alignParentEnd="true"
+        android:background="@drawable/forward_nav"
         />
 
 </RelativeLayout>
