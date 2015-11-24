@@ -42,7 +42,7 @@ public class Book {
         this.icon = icon;
         this.description = description;
         this.author = author;
-        this.pages =  new HashMap<Integer, Page>();
+        this.pages =  new HashMap<>();
         this.totalPages = pages.size();
     }
 
