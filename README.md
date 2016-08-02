@@ -1,4 +1,4 @@
- #  Read to Me
+# Read to Me
 Paul Hawk
 
 The App, Read to Me, allows children to hear books read to them by loved ones. There are so many ways loved ones can communicate but for children who cannot read it is more difficulty. A  fun way to bridge the gap is the app. My kids love it and they used the swiping to change the pages without even being told. 
